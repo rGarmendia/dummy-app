@@ -1,0 +1,19 @@
+namespace: podinfo
+
+deployment:
+  replicas: 2
+  container:
+    image: stefanprodan/podinfo:6.5.1
+  resources:
+    requests:
+      memory: "64Mi"
+      cpu: "250m"
+    limits:
+      memory: "128Mi"
+      cpu: "500m"
+
+service:
+  name: podinfo
+
+ingress:
+  host: podinfo.wefox.localhost

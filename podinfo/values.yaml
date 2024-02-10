@@ -1,0 +1,33 @@
+
+deployment:
+  name: podinfo
+  replicas: 1
+  container:
+    name: podinfo
+    image: stefanprodan/podinfo:latest
+    port: 9898
+  resources:
+    requests:
+      memory: "64Mi"
+      cpu: "250m"
+    limits:
+      memory: "128Mi"
+      cpu: "500m"
+  health:
+    path: /healthz
+    port: 9898
+  readiness:
+    path: /readyz
+    port: 9898
+
+
+
+service:
+  name: podinfo
+  port: 80
+  targetPort: 9898
+  type: ClusterIP
+
+ingress:
+  name: podinfo-ingress
+  path: /
