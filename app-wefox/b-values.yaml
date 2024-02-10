@@ -10,16 +10,3 @@ service:
 
 ingress:
   host: b.app-wefox.local
-
-
-#   certificate: certificate-letsencrypt-pro
-
-# issuer:
-#   name: letsencrypt-pro
-#   server: https://acme-v02.api.letsencrypt.org/directory
-#   email: rdgc91@gmail.com
-#   privateKeySecretRef:
-#     name: secret-letsencrypt-pro
-#   ingress:
-#     class: ingress-nginx
-#   secretName: letsencrypt-pro
