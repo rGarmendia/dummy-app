@@ -1,0 +1,25 @@
+
+deployment:
+  name: app-wefox
+  replicas: 1
+  container:
+    name: app-wefox
+    image: stefanprodan/podinfo:latest
+    port: 9898
+  resources:
+    requests:
+      memory: "64Mi"
+      cpu: "250m"
+    limits:
+      memory: "128Mi"
+      cpu: "500m"
+
+service:
+  name: app-wefox
+  port: 80
+  targetPort: 9898
+  type: ClusterIP
+
+ingress:
+  name: app-wefox-ingress
+  path: /

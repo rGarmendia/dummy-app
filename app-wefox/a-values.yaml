@@ -1,0 +1,25 @@
+namespace: a-ns
+
+deployment:
+  replicas: 2
+  container:
+    image: stefanprodan/podinfo:6.5.1
+
+
+service:
+  name: app-wefox
+
+ingress:
+  host: a.app-wefox.local
+
+  # certificate: certificate-letsencrypt-dev
+
+# issuer:
+#   name: letsencrypt-dev
+#   server: https://acme-v02.api.letsencrypt.org/directory
+#   email: rdgc91@gmail.com
+#   privateKeySecretRef:
+#     name: privatekey-letsencrypt-dev
+#   ingress:
+#     class: ingress-nginx
+#   secretName: secret-letsencrypt-dev
